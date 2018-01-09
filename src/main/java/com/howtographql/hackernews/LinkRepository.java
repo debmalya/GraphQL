@@ -17,6 +17,7 @@ public class LinkRepository {
         links.add(new Link("http://graphql.org/learn/", "The official docks"));
         links.add(new Link("http://www.futurelearn.com", "Future learn"));
         links.add(new Link("http://www.udemy.com", "Udemy"));
+        links.add(new Link("http://java.sun.com", "Java Official Website"));
     }
 
     public List<Link> getAllLinks() {

@@ -14,19 +14,12 @@ public class GraphQLEndpoint extends SimpleGraphQLServlet {
         super(buildSchema());
     }
 
-    /*
-    public GraphQLEndpoint() {
-        super(SchemaParser.newParser()
-                .file("schema_small.graphqls") //parse the schema file created earlier
-                .build()
-                .makeExecutableSchema());
-    }
-    */
+
     private static GraphQLSchema buildSchema() {
         LinkRepository linkRepository = new LinkRepository();
         return SchemaParser.newParser()
                 .file("schema_small.graphqls")
-                .resolvers(new Query(linkRepository))
+                .resolvers(new Query(linkRepository),new Mutation(linkRepository))
                 .build()
                 .makeExecutableSchema();
     }
